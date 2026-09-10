@@ -1,0 +1,1169 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0D0D0D" />
+<meta name="description" content="TTGYM(ティーティージム/広尾)は「美と健康」をテーマに、完全個室のパーソナルトレーニングと本格キックボクシングを提供するプライベートジム。1年以上継続率41.7%、リピート率86%。無料体験受付中。" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" href="/icon-192.png" />
+<title>TTGYM | 広尾の完全個室パーソナル&キックボクシングジム</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;600;700;900&family=Noto+Sans+JP:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0D0D0D; --bg2:#141414; --bg3:#181818;
+    --card:#1A1A1A; --border:#2A2A2A; --border-light:#3A3A3A;
+    --gold:#F5F4F0; --gold-bright:#FFFFFF; --gold-dim:#9A978C; --gold-soft:rgba(255,255,255,0.08);
+    --ivory:#EDEAE0; --dim:#8A8578; --danger:#B2483A;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg); color:var(--ivory);
+    font-family:'Noto Sans JP', sans-serif;
+    line-height:1.75; overflow-x:hidden; -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  ul{list-style:none;}
+  section{position:relative; padding:96px 20px;}
+  .wrap{max-width:1120px; margin:0 auto;}
+  h1,h2,h3{font-family:'Noto Serif JP', serif; font-weight:700;}
+  .eyebrow{
+    font-family:'Space Mono', monospace; font-size:11px; letter-spacing:4px;
+    color:var(--gold); text-transform:uppercase; display:inline-flex; align-items:center; gap:10px; margin-bottom:16px;
+  }
+  .eyebrow::before{content:""; width:26px; height:1px; background:var(--gold);}
+  .h2{font-size:clamp(26px,4vw,40px); color:var(--ivory); margin-bottom:14px; letter-spacing:1px;}
+  .lead{color:var(--dim); font-size:15px; max-width:560px;}
+  .center{text-align:center; margin-left:auto; margin-right:auto;}
+  .gold-text{
+    background:linear-gradient(135deg,var(--gold-bright) 0%, var(--gold) 45%, var(--gold-dim) 100%);
+    -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+  }
+  .mobile-only{display:none;}
+
+  /* ---------- concept ---------- */
+  .concept-wrap{max-width:680px; display:flex; flex-direction:column; align-items:center;}
+  .concept-quote{
+    font-family:'Noto Serif JP', serif; font-size:clamp(17px,2.4vw,21px); font-weight:600;
+    color:var(--ivory); line-height:1.9; margin:8px 0 24px;
+  }
+  .concept-note{font-size:11px; color:var(--gold-dim); font-family:'Space Mono',monospace; letter-spacing:2px; margin-top:18px;}
+  .ig-btn{margin-top:8px; display:inline-flex; align-items:center; gap:10px;}
+  .ig-icon{
+    width:16px; height:16px; border-radius:5px; flex-shrink:0;
+    background:linear-gradient(135deg,#ffffff,#d8d6cf 50%,#8f8c82);
+    -webkit-mask:radial-gradient(circle 3.4px at 50% 50%, transparent 98%, #000 100%),
+                 linear-gradient(#000,#000);
+    -webkit-mask-composite:source-out; mask-composite:exclude;
+  }
+
+  /* ---------- philosophy ---------- */
+  .philosophy-lead{color:var(--ivory); font-size:15px; max-width:640px; margin:0 auto 16px; text-align:center; line-height:1.9;}
+  .philosophy-sub{font-family:'Noto Serif JP',serif; font-size:22px; text-align:center; margin:52px 0 30px; letter-spacing:2px;}
+  .creed-list{display:grid; grid-template-columns:repeat(2,1fr); gap:14px 44px; max-width:920px; margin:0 auto;}
+  .creed-list li{font-size:13px; color:var(--dim); line-height:1.8; display:flex; gap:6px;}
+  .creed-list li::before{content:"一、"; color:var(--gold); flex-shrink:0; font-family:'Noto Serif JP',serif;}
+
+  /* ---------- signature ---------- */
+  .signature-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:24px; margin-top:56px;}
+  .signature-card{
+    border:1px solid var(--border); background:var(--card); padding:44px 36px; border-radius:4px;
+    transition:transform .35s ease, border-color .35s ease;
+  }
+  .signature-card:hover{transform:translateY(-6px); border-color:var(--gold);}
+  .signature-tag{font-family:'Space Mono',monospace; font-size:11px; letter-spacing:2px; color:var(--gold-dim); margin-bottom:14px;}
+  .signature-card h3{font-size:24px; margin-bottom:14px;}
+  .signature-card p{font-size:13.5px; color:var(--dim); margin-bottom:24px;}
+
+  /* ---------- reveal-on-scroll ---------- */
+  .reveal{opacity:0; transform:translateY(28px); transition:opacity .8s cubic-bezier(.16,.8,.24,1), transform .8s cubic-bezier(.16,.8,.24,1);}
+  .reveal.in{opacity:1; transform:translateY(0);}
+  .stagger > *{transition-delay:calc(var(--i,0) * 90ms);}
+
+  /* ---------- header ---------- */
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:20px 24px; transition:all .35s ease;
+    background:transparent;
+  }
+  header.scrolled{
+    padding:12px 24px; background:rgba(13,13,13,0.86); backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
+  }
+  .brand{display:flex; flex-direction:column; line-height:1; cursor:pointer;}
+  .brand .name{font-family:'Noto Serif JP',serif; font-weight:700; font-size:22px;}
+  .brand .tag{font-family:'Space Mono',monospace; font-size:8px; letter-spacing:3px; color:var(--gold-dim); margin-top:3px;}
+  nav.mainnav{display:flex; align-items:center; gap:34px;}
+  nav.mainnav a{
+    font-size:13px; color:var(--ivory); position:relative; padding:4px 0; opacity:.85;
+  }
+  nav.mainnav a::after{
+    content:""; position:absolute; left:0; bottom:-2px; width:0; height:1px; background:var(--gold);
+    transition:width .3s ease;
+  }
+  nav.mainnav a:hover::after{width:100%;}
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    padding:13px 26px; border-radius:2px; font-size:13px; letter-spacing:1px; font-weight:600;
+    cursor:pointer; border:1px solid var(--gold); transition:all .3s ease; white-space:nowrap;
+  }
+  .btn-gold{
+    background:linear-gradient(135deg,var(--gold-bright),var(--gold) 60%,var(--gold-dim));
+    color:#0D0D0D; box-shadow:0 8px 24px -8px rgba(255,255,255,.22);
+  }
+  .btn-gold:hover{transform:translateY(-2px); box-shadow:0 12px 30px -6px rgba(255,255,255,.3);}
+  .btn-outline{background:transparent; color:var(--gold);}
+  .btn-outline:hover{background:var(--gold-soft);}
+  .header-ig{
+    width:34px; height:34px; border:1px solid var(--border-light); border-radius:50%;
+    display:flex; align-items:center; justify-content:center; transition:border-color .3s;
+  }
+  .header-ig:hover{border-color:var(--gold);}
+  .hamburger{display:none; flex-direction:column; gap:5px; cursor:pointer; z-index:110;}
+  .hamburger span{width:24px; height:2px; background:var(--ivory); transition:.3s;}
+  .mobilenav{
+    position:fixed; inset:0; background:var(--bg2); z-index:105;
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:30px;
+    transform:translateX(100%); transition:transform .4s cubic-bezier(.7,0,.3,1);
+  }
+  .mobilenav.open{transform:translateX(0);}
+  .mobilenav a{font-size:20px; font-family:'Noto Serif JP',serif;}
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;
+    min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center; padding-top:120px; overflow:hidden;
+  }
+  .hero-glow{
+    position:absolute; inset:0; z-index:0; pointer-events:none;
+    background:
+      radial-gradient(600px 500px at var(--mx,50%) var(--my,20%), rgba(255,255,255,.10), transparent 60%),
+      radial-gradient(900px 600px at 80% 100%, rgba(255,255,255,.05), transparent 60%);
+    transition:background-position .2s ease;
+  }
+  .hero-grid{
+    position:absolute; inset:0; z-index:0; opacity:.35;
+    background-image:linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+    background-size:56px 56px;
+    mask-image:radial-gradient(ellipse 70% 60% at 50% 30%, black 30%, transparent 75%);
+  }
+  .hero-content{position:relative; z-index:1; max-width:840px;}
+  .hero h1{
+    font-size:clamp(34px,6.4vw,72px); line-height:1.28; letter-spacing:1px; margin-bottom:22px;
+  }
+  .hero h1 span{display:block;}
+  .hero p.lead{margin:0 auto 40px; max-width:520px; font-size:15.5px;}
+  .hero-cta{display:flex; gap:16px; justify-content:center; flex-wrap:wrap;}
+  .scroll-cue{
+    position:relative; z-index:1; margin-top:64px; display:flex; flex-direction:column; align-items:center; gap:10px;
+    color:var(--dim); font-family:'Space Mono',monospace; font-size:10px; letter-spacing:3px;
+  }
+  .scroll-cue .line{width:1px; height:38px; background:linear-gradient(var(--gold), transparent); animation:scrollcue 1.8s ease-in-out infinite;}
+  @keyframes scrollcue{0%{transform:scaleY(0); transform-origin:top;} 50%{transform:scaleY(1); transform-origin:top;} 51%{transform-origin:bottom;} 100%{transform:scaleY(0); transform-origin:bottom;}}
+
+  /* ---------- news bar ---------- */
+  .news-bar{
+    position:relative; z-index:2; display:flex; align-items:center; gap:14px;
+    background:var(--ivory); color:#0D0D0D; overflow:hidden; padding:10px 0 10px 18px;
+  }
+  .news-badge{
+    flex-shrink:0; display:inline-flex; align-items:center; gap:7px; font-family:'Space Mono',monospace;
+    font-size:11px; font-weight:700; letter-spacing:2px; background:#0D0D0D; color:var(--ivory);
+    padding:6px 12px; border-radius:20px;
+  }
+  .news-dot{width:6px; height:6px; border-radius:50%; background:#ff4d3d; animation:newsPulse 1.4s ease-in-out infinite;}
+  @keyframes newsPulse{0%,100%{opacity:1; transform:scale(1);} 50%{opacity:.35; transform:scale(1.4);}}
+  .news-track-wrap{flex:1; overflow:hidden; -webkit-mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent); mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);}
+  .news-track{display:flex; width:max-content; animation:newsScroll 22s linear infinite;}
+  .news-bar:hover .news-track{animation-play-state:paused;}
+  .news-item{
+    display:inline-block; padding-right:60px; font-size:13px; font-weight:600; letter-spacing:.3px; white-space:nowrap;
+  }
+  @keyframes newsScroll{from{transform:translateX(0);} to{transform:translateX(-50%);}}
+
+  /* ---------- marquee ---------- */
+  .marquee-wrap{
+    border-top:1px solid var(--border); border-bottom:1px solid var(--border);
+    padding:22px 0; overflow:hidden; background:var(--bg2);
+  }
+  .marquee{display:flex; width:max-content; animation:marquee 30s linear infinite; gap:0;}
+  .marquee:hover{animation-play-state:paused;}
+  .marquee span{
+    font-family:'Noto Serif JP',serif; font-size:16px; color:var(--dim); padding:0 34px; white-space:nowrap;
+    display:flex; align-items:center; gap:34px;
+  }
+  .marquee span b{color:var(--gold); font-weight:600;}
+  .marquee span::after{content:"◆"; color:var(--gold-dim); font-size:9px; margin-left:34px;}
+  @keyframes marquee{from{transform:translateX(0);} to{transform:translateX(-50%);}}
+
+  /* ---------- campaign ---------- */
+  .campaign-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:24px; margin-top:56px;}
+  .campaign-card{
+    position:relative; overflow:hidden; border:1px solid var(--border); background:var(--card);
+    padding:40px 34px; border-radius:4px; text-align:center;
+  }
+  .campaign-card.highlight{border-color:var(--gold); background:linear-gradient(180deg, var(--gold-soft), var(--card) 45%);}
+  .campaign-card.highlight::before{
+    content:""; position:absolute; inset:0; pointer-events:none;
+    background:linear-gradient(115deg, transparent 40%, rgba(255,255,255,.14) 50%, transparent 60%);
+    background-size:220% 100%; animation:shimmer 3.4s ease-in-out infinite;
+  }
+  @keyframes shimmer{0%{background-position:200% 0;} 100%{background-position:-60% 0;}}
+  .campaign-tag{
+    display:inline-block; font-family:'Space Mono',monospace; font-size:11px; letter-spacing:2px; color:#0D0D0D;
+    background:var(--gold); padding:6px 14px; border-radius:20px; font-weight:700; margin-bottom:22px;
+  }
+  .campaign-headline{font-family:'Noto Serif JP',serif; font-size:clamp(20px,3vw,28px); font-weight:700; line-height:1.5; position:relative;}
+  .campaign-headline .old{color:var(--dim); text-decoration:line-through; font-size:.62em; font-family:'Noto Sans JP',sans-serif; margin-right:6px;}
+  .campaign-headline .arrow{color:var(--gold-dim); margin:0 4px;}
+  .campaign-note{font-size:12px; color:var(--dim); margin-top:16px; position:relative;}
+
+  /* ---------- concerns ---------- */
+  .concerns-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border); border:1px solid var(--border); margin-top:56px;}
+  .concern-card{background:var(--bg); padding:34px 28px; transition:background .3s ease;}
+  .concern-card:hover{background:var(--bg3);}
+  .concern-card .q{font-family:'Space Mono',monospace; color:var(--gold-dim); font-size:12px; margin-bottom:12px;}
+  .concern-card p{font-size:14.5px; color:var(--ivory); opacity:.9;}
+
+  /* ---------- stats ---------- */
+  .stats{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border);
+    border:1px solid var(--border); margin-top:60px;
+  }
+  .stat{background:var(--bg2); padding:38px 20px; text-align:center;}
+  .stat .num{font-family:'Noto Serif JP',serif; font-size:clamp(30px,4vw,44px); font-weight:700;}
+  .stat .label{font-size:12px; color:var(--dim); margin-top:8px; letter-spacing:.5px;}
+  .stats-note{text-align:center; font-size:11px; color:var(--dim); font-family:'Space Mono',monospace; letter-spacing:1.5px; margin-top:14px;}
+
+  /* ---------- features ---------- */
+  .feat-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:56px;}
+  .feat-card{
+    background:var(--card); border:1px solid var(--border); padding:36px 28px; border-radius:4px;
+    transition:transform .35s ease, border-color .35s ease, box-shadow .35s ease;
+  }
+  .feat-card:hover{transform:translateY(-6px); border-color:var(--gold-dim); box-shadow:0 20px 40px -20px rgba(0,0,0,.6);}
+  .feat-num{font-family:'Space Mono',monospace; color:var(--gold-dim); font-size:12px; margin-bottom:18px;}
+  .feat-card h3{font-size:18px; margin-bottom:10px; color:var(--ivory);}
+  .feat-card p{font-size:13.5px; color:var(--dim);}
+
+  /* ---------- courses ---------- */
+  .course-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:56px;}
+  .course-card{
+    border:1px solid var(--border); border-radius:4px; overflow:hidden; background:var(--bg2);
+    display:flex; flex-direction:column; transition:transform .35s ease, border-color .35s ease;
+  }
+  .course-card:hover{transform:translateY(-6px); border-color:var(--gold);}
+  .course-card.signature{border-color:var(--border-light);}
+  .course-top{padding:30px 26px; border-bottom:1px solid var(--border);}
+  .course-top .tag{font-family:'Space Mono',monospace; font-size:10px; letter-spacing:2px; color:var(--gold);}
+  .course-top h3{font-size:21px; margin:12px 0 8px;}
+  .course-top p{font-size:13px; color:var(--dim);}
+  .course-body{padding:24px 26px; flex:1; display:flex; flex-direction:column; gap:10px;}
+  .course-body li{font-size:13px; color:var(--ivory); display:flex; gap:8px; align-items:flex-start;}
+  .course-body li::before{content:"—"; color:var(--gold-dim); flex-shrink:0;}
+
+  /* ---------- pricing ---------- */
+  .price-note-top{text-align:center; font-size:13.5px; color:var(--ivory); margin-top:8px;}
+  .price-note-top b{color:var(--gold);}
+  .price-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:32px; align-items:stretch;}
+  .price-grid.two{grid-template-columns:repeat(2,1fr); max-width:760px; margin-left:auto; margin-right:auto;}
+  .price-card{
+    border:1px solid var(--border); border-radius:4px; padding:36px 30px; text-align:center; background:var(--card);
+    position:relative; transition:transform .35s ease, border-color .35s; display:flex; flex-direction:column;
+  }
+  .price-card.highlight{border-color:var(--gold); background:linear-gradient(180deg, var(--gold-soft), var(--card) 40%);}
+  .price-card:hover{transform:translateY(-6px);}
+  .price-card .badge{
+    position:absolute; top:-13px; left:50%; transform:translateX(-50%);
+    background:var(--gold); color:#0D0D0D; font-size:11px; padding:5px 14px; border-radius:20px; font-weight:700; letter-spacing:1px;
+  }
+  .price-card h3{font-size:15px; color:var(--dim); font-weight:500; margin-bottom:18px; letter-spacing:1px;}
+  .price-card .price{font-family:'Noto Serif JP',serif; font-size:38px; font-weight:700; color:var(--ivory);}
+  .price-card .price small{font-size:14px; color:var(--dim); font-family:'Noto Sans JP',sans-serif;}
+  .price-card .note{font-size:12px; color:var(--dim); margin:16px 0 24px;}
+  .price-card ul{text-align:left; display:flex; flex-direction:column; gap:9px; margin-bottom:26px; flex:1;}
+  .price-card ul li{font-size:12.5px; color:var(--ivory); display:flex; gap:8px;}
+  .price-card ul li::before{content:"✓"; color:var(--gold); flex-shrink:0;}
+  .price-card ul.tiers li{justify-content:center; align-items:baseline; gap:18px;}
+  .price-card ul.tiers li::before{content:none;}
+  .price-card ul.tiers li b{color:var(--gold); font-family:'Noto Serif JP',serif; font-size:19px; font-weight:700;}
+  .tier-price{display:flex; align-items:baseline; gap:6px;}
+  .tier-price small{color:var(--dim); font-size:11px; font-weight:400; font-family:'Noto Sans JP',sans-serif;}
+  .price-foot{text-align:center; margin-top:28px; font-size:12.5px; color:var(--dim);}
+  .kb-price{margin-top:72px; padding-top:56px; border-top:1px solid var(--border);}
+  .kb-price-title{font-family:'Noto Serif JP',serif; font-size:26px; text-align:center; margin-bottom:12px;}
+  .kb-trial-row{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--border); border:1px solid var(--border); margin-top:32px;}
+  .kb-trial{background:var(--bg2); padding:20px 16px; text-align:center;}
+  .kb-trial span{display:block; font-size:11px; color:var(--dim); margin-bottom:8px;}
+  .kb-trial b{font-family:'Noto Serif JP',serif; font-size:19px; color:var(--ivory); font-weight:700;}
+  .kb-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:24px; margin-top:32px;}
+  .kb-trial-row.solo{grid-template-columns:1fr; max-width:280px; margin:32px auto 0;}
+
+  /* ---------- flow ---------- */
+  .flow{margin-top:64px; position:relative;}
+  .flow-line{
+    position:absolute; left:29px; top:12px; bottom:12px; width:1px; background:var(--border);
+  }
+  .flow-line-fill{
+    position:absolute; left:0; top:0; width:100%; height:0%; background:var(--gold); transition:height 1.2s ease;
+  }
+  .flow-step{display:flex; gap:28px; padding-bottom:48px; position:relative;}
+  .flow-step:last-child{padding-bottom:0;}
+  .flow-num{
+    width:60px; height:60px; border-radius:50%; border:1px solid var(--border-light); background:var(--bg2);
+    display:flex; align-items:center; justify-content:center; font-family:'Noto Serif JP',serif; font-size:20px; color:var(--gold);
+    flex-shrink:0; z-index:1; transition:border-color .4s, box-shadow .4s;
+  }
+  .flow-step.in .flow-num{border-color:var(--gold); box-shadow:0 0 0 6px var(--gold-soft);}
+  .flow-text h3{font-size:17px; margin-bottom:8px; padding-top:12px;}
+  .flow-text p{font-size:13.5px; color:var(--dim); max-width:520px;}
+
+  /* ---------- voices ---------- */
+  .voice-track{display:flex; gap:22px; overflow-x:auto; scroll-snap-type:x mandatory; padding:56px 0 10px; margin:0 -20px; padding-left:20px; padding-right:20px; scrollbar-width:none;}
+  .voice-track::-webkit-scrollbar{display:none;}
+  .voice-card{
+    scroll-snap-align:start; flex:0 0 320px; background:var(--card); border:1px solid var(--border); border-radius:4px;
+    padding:28px 26px;
+  }
+  .voice-card .stars{color:var(--gold); font-size:13px; margin-bottom:14px;}
+  .voice-card p.quote{font-size:13.5px; color:var(--ivory); margin-bottom:20px; min-height:120px;}
+  .voice-meta{display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--border); padding-top:14px;}
+  .voice-meta .name{font-size:12px; color:var(--gold);}
+  .voice-note{text-align:center; font-size:11.5px; color:var(--dim); margin-top:8px;}
+
+  /* ---------- access ---------- */
+  .access-box{
+    display:grid; grid-template-columns:1fr 1fr; gap:0; margin-top:56px; border:1px solid var(--border);
+  }
+  .access-info{padding:44px; background:var(--card);}
+  .access-info dt{font-family:'Space Mono',monospace; font-size:10px; color:var(--gold-dim); letter-spacing:2px; margin-top:22px;}
+  .access-info dt:first-child{margin-top:0;}
+  .access-info dd{font-size:14.5px; margin-top:8px;}
+  .map-card{
+    position:relative; width:100%; height:100%; min-height:280px; background:var(--bg2);
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:18px;
+    padding:40px 28px; text-align:center;
+    background-image:radial-gradient(circle at 30% 18%, rgba(255,255,255,.06), transparent 55%);
+  }
+  .map-card .map-addr{font-size:12.5px; color:var(--dim); font-family:'Space Mono',monospace; letter-spacing:.5px; line-height:1.8;}
+
+  /* ---------- reserve form ---------- */
+  .reserve-form{max-width:640px; margin:40px auto 0; display:flex; flex-direction:column; gap:20px;}
+  .reserve-form .form-row{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
+  .reserve-form label{display:flex; flex-direction:column; gap:8px; font-size:12px; color:var(--dim); font-family:'Space Mono',monospace; letter-spacing:.5px;}
+  .reserve-form .req{color:var(--gold); font-size:10px; margin-left:6px;}
+  .reserve-form input, .reserve-form select, .reserve-form textarea{
+    background:var(--card); border:1px solid var(--border); color:var(--ivory); font-family:'Noto Sans JP',sans-serif;
+    font-size:14px; padding:12px 14px; border-radius:2px; outline:none; transition:border-color .3s;
+  }
+  .reserve-form input:focus, .reserve-form select:focus, .reserve-form textarea:focus{border-color:var(--gold);}
+  .reserve-form textarea{resize:vertical; min-height:96px; font-family:'Noto Sans JP',sans-serif;}
+  .reserve-form button{align-self:center; min-width:240px; margin-top:6px;}
+  .reserve-form button:disabled{opacity:.5; cursor:not-allowed;}
+  .form-note{text-align:center; font-size:12.5px; min-height:18px;}
+  .form-note.ok{color:#9FCB9F;}
+  .form-note.err{color:var(--danger);}
+  .reserve-alt{display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-top:36px;}
+
+  /* ---------- faq ---------- */
+  .faq{max-width:760px; margin:56px auto 0;}
+  .faq-item{border-bottom:1px solid var(--border);}
+  .faq-q{
+    width:100%; background:none; border:none; color:var(--ivory); text-align:left; padding:22px 4px;
+    display:flex; justify-content:space-between; align-items:center; cursor:pointer; font-size:15px; font-family:'Noto Serif JP',serif;
+  }
+  .faq-q .plus{color:var(--gold); font-size:20px; transition:transform .35s ease; flex-shrink:0; margin-left:16px;}
+  .faq-item.open .plus{transform:rotate(135deg);}
+  .faq-a{max-height:0; overflow:hidden; transition:max-height .4s ease;}
+  .faq-a p{font-size:13.5px; color:var(--dim); padding:0 4px 22px;}
+
+  /* ---------- final cta ---------- */
+  .final-cta{
+    text-align:center; background:linear-gradient(180deg, var(--bg2), var(--bg));
+    border-top:1px solid var(--border); padding:110px 20px;
+  }
+  .final-cta h2{font-size:clamp(26px,4.5vw,42px); margin-bottom:18px;}
+  .final-cta .lead{margin:0 auto 40px;}
+  .final-cta-actions{display:flex; gap:16px; justify-content:center; flex-wrap:wrap;}
+  .final-cta-sub{margin-top:24px;}
+
+  /* ---------- hero tel / app link ---------- */
+  .hero-tel{margin-top:22px; font-size:12px; color:var(--dim); letter-spacing:.3px;}
+  .hero-tel a{color:var(--gold); border-bottom:1px solid var(--border-light); padding-bottom:1px;}
+  .hero-tel a:hover{border-color:var(--gold);}
+  .app-link{
+    display:inline-block; font-size:12px; color:var(--gold-dim); font-family:'Space Mono',monospace;
+    letter-spacing:1px; border-bottom:1px solid var(--border-light); padding-bottom:3px; transition:color .3s, border-color .3s;
+  }
+  .app-link:hover{color:var(--gold); border-color:var(--gold);}
+
+  /* ---------- focus visibility ---------- */
+  a:focus-visible, button:focus-visible{outline:2px solid var(--gold); outline-offset:3px; border-radius:2px;}
+
+  /* ---------- app modal ---------- */
+  .modal-overlay{
+    position:fixed; inset:0; z-index:200; background:rgba(6,6,6,.78); backdrop-filter:blur(6px);
+    display:flex; align-items:center; justify-content:center; padding:24px;
+  }
+  .modal-overlay[hidden]{display:none;}
+  .modal-card{
+    position:relative; max-width:420px; width:100%; background:var(--card); border:1px solid var(--border-light);
+    border-radius:4px; padding:44px 32px 36px; text-align:center;
+  }
+  .modal-card h3{font-size:19px; margin:8px 0 14px; letter-spacing:.5px;}
+  .modal-card p{font-size:13px; color:var(--dim); margin-bottom:26px; line-height:1.8;}
+  .modal-actions{display:flex; gap:12px; justify-content:center; flex-wrap:wrap;}
+  .modal-close{
+    position:absolute; top:14px; right:14px; width:32px; height:32px; border-radius:50%;
+    border:1px solid var(--border-light); background:transparent; color:var(--ivory); font-size:16px;
+    line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:border-color .3s, color .3s;
+  }
+  .modal-close:hover{border-color:var(--gold); color:var(--gold);}
+
+  /* ---------- footer ---------- */
+  footer{border-top:1px solid var(--border); padding:64px 20px 28px; background:var(--bg);}
+  .foot-grid{display:grid; grid-template-columns:1.4fr repeat(3,1fr); gap:40px; max-width:1120px; margin:0 auto;}
+  .foot-brand .name{font-family:'Noto Serif JP',serif; font-size:22px; font-weight:700;}
+  .foot-brand p{font-size:12.5px; color:var(--dim); margin-top:14px; max-width:260px;}
+  .foot-brand .group{font-size:10.5px; color:var(--gold-dim); font-family:'Space Mono',monospace; letter-spacing:1.5px; margin-top:16px;}
+  .foot-col h4{font-size:12px; letter-spacing:1.5px; color:var(--gold-dim); margin-bottom:16px; font-family:'Space Mono',monospace;}
+  .foot-col li{margin-bottom:10px; font-size:13px; color:var(--dim);}
+  .foot-col a:hover{color:var(--gold);}
+  .foot-sns{display:flex; gap:12px; margin-top:18px;}
+  .foot-sns a{
+    width:34px; height:34px; border:1px solid var(--border-light); border-radius:50%;
+    display:flex; align-items:center; justify-content:center; font-size:13px; transition:.3s;
+  }
+  .foot-sns a:hover{border-color:var(--gold); color:var(--gold);}
+  .foot-bottom{
+    max-width:1120px; margin:48px auto 0; padding-top:24px; border-top:1px solid var(--border);
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; font-size:11.5px; color:var(--dim);
+  }
+
+  /* ---------- sticky mobile cta ---------- */
+  .sticky-cta{
+    position:fixed; bottom:0; left:0; right:0; z-index:90; padding:12px 16px;
+    background:rgba(13,13,13,.92); backdrop-filter:blur(10px); border-top:1px solid var(--border);
+    display:none;
+  }
+  .sticky-cta .btn{width:100%;}
+
+  @media (max-width:860px){
+    .mobile-only{display:inline;}
+    nav.mainnav, header .btn-outline{display:none;}
+    .hamburger{display:flex;}
+    .concerns-grid, .feat-grid, .course-grid, .price-grid, .signature-grid, .campaign-grid, .creed-list, .kb-grid, .reserve-form .form-row{grid-template-columns:1fr;}
+    .kb-trial-row{grid-template-columns:repeat(2,1fr);}
+    .stats{grid-template-columns:1fr;}
+    .access-box{grid-template-columns:1fr;}
+    .foot-grid{grid-template-columns:1fr 1fr; gap:32px;}
+    .sticky-cta{display:block;}
+    section{padding:72px 18px;}
+    body{padding-bottom:70px;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important; transition:none !important;}
+    .reveal{opacity:1; transform:none;}
+  }
+</style>
+</head>
+<body>
+
+<header id="siteHeader">
+  <a href="#top" class="brand">
+    <span class="name gold-text">TTGYM</span>
+    <span class="tag">PERSONAL TRAINING / HIROO</span>
+  </a>
+  <nav class="mainnav">
+    <a href="#campaign">キャンペーン</a>
+    <a href="#features">特徴</a>
+    <a href="#courses">プログラム</a>
+    <a href="#price">料金</a>
+    <a href="#flow">流れ</a>
+    <a href="#reserve">予約フォーム</a>
+    <a href="#voice">お客様の声</a>
+    <a href="#access">アクセス</a>
+    <a href="#faq">よくある質問</a>
+  </nav>
+  <div style="display:flex; align-items:center; gap:14px;">
+    <a href="https://www.instagram.com/ttgym_official" target="_blank" rel="noopener" class="header-ig" aria-label="Instagram"><span class="ig-icon" aria-hidden="true"></span></a>
+    <a href="https://lin.ee/QheIZp8" target="_blank" rel="noopener" class="btn btn-outline">無料カウンセリング</a>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</header>
+
+<div class="mobilenav" id="mobileNav">
+  <a href="#campaign">キャンペーン</a>
+  <a href="#features">特徴</a>
+  <a href="#courses">プログラム</a>
+  <a href="#price">料金</a>
+  <a href="#flow">流れ</a>
+  <a href="#reserve">予約フォーム</a>
+  <a href="#voice">お客様の声</a>
+  <a href="#access">アクセス</a>
+  <a href="#faq">よくある質問</a>
+  <a href="https://www.instagram.com/ttgym_official" target="_blank" rel="noopener">Instagram</a>
+  <a href="https://lin.ee/QheIZp8" target="_blank" rel="noopener" class="btn btn-gold" style="margin-top:10px;">無料カウンセリング予約</a>
+</div>
+
+<div id="top"></div>
+<section class="hero">
+  <div class="hero-glow" id="heroGlow"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="eyebrow center">BEAUTY &amp; HEALTH / HIROO TOKYO</div>
+    <h1 class="reveal in">
+      <span>最高に幸せを感じる</span>
+      <span class="gold-text">身体を あなたに</span>
+    </h1>
+    <p class="lead center reveal in" style="transition-delay:.15s;">
+      TTGYMは「美と健康」をテーマに、完全個室のパーソナルトレーニングと本格キックボクシングを提供する、広尾のプライベートジムです。
+      しなやかで引き締まり、強く動ける身体づくりを、専属トレーナーが伴走します。
+    </p>
+    <div class="hero-cta reveal in" style="transition-delay:.3s;">
+      <a href="https://lin.ee/QheIZp8" target="_blank" rel="noopener" class="btn btn-gold">無料カウンセリングを予約する</a>
+      <a href="#courses" class="btn btn-outline">プログラムを見る</a>
+    </div>
+    <p class="hero-tel reveal in" style="transition-delay:.4s;">またはお電話で <a href="tel:0364509321">03-6450-9321</a>(10:00-22:00・最終受付21:00)</p>
+  </div>
+  <div class="scroll-cue"><span>SCROLL</span><div class="line"></div></div>
+</section>
+
+<a href="#campaign" class="news-bar">
+  <span class="news-badge"><span class="news-dot"></span>CAMPAIGN</span>
+  <span class="news-track-wrap">
+    <span class="news-track">
+      <span class="news-item">当日入会で体験料・入会金が無料 ── 50名限定で月額27,800円が3ヶ月間19,800円 ── 詳しくはこちら</span>
+      <span class="news-item">当日入会で体験料・入会金が無料 ── 50名限定で月額27,800円が3ヶ月間19,800円 ── 詳しくはこちら</span>
+    </span>
+  </span>
+</a>
+
+<div class="marquee-wrap">
+  <div class="marquee">
+    <span><b>パーソナル×キックボクシング</b>の高級空間<b>1年以上継続率41.7%</b>で実力を証明<b>リピート率86%</b>の高い満足度<b>子連れ・犬連れOK</b>で通いやすい<b>無料駐車場完備</b>で気軽にアクセス<b>公式LINEで食事サポート</b>も対応</span>
+    <span><b>パーソナル×キックボクシング</b>の高級空間<b>1年以上継続率41.7%</b>で実力を証明<b>リピート率86%</b>の高い満足度<b>子連れ・犬連れOK</b>で通いやすい<b>無料駐車場完備</b>で気軽にアクセス<b>公式LINEで食事サポート</b>も対応</span>
+  </div>
+</div>
+
+<section id="campaign">
+  <div class="wrap">
+    <div class="eyebrow center">CAMPAIGN</div>
+    <h2 class="h2 center reveal">期間限定キャンペーン実施中</h2>
+    <p class="lead center reveal">今だけの特別オファーです。この機会にぜひTTGYMを体感してください。</p>
+    <div class="campaign-grid reveal">
+      <div class="campaign-card">
+        <div class="campaign-tag">当日入会限定</div>
+        <div class="campaign-headline">体験料・入会金 <span class="gold-text">無料</span></div>
+        <p class="campaign-note">※月額プランの入会金は対象外で、"実施無料"となります</p>
+      </div>
+      <div class="campaign-card highlight">
+        <div class="campaign-tag">50名限定</div>
+        <div class="campaign-headline"><span class="old">月額27,800円</span><span class="arrow">→</span><span class="gold-text">3ヶ月間19,800円</span></div>
+        <p class="campaign-note">先着50名様限定の特別価格です</p>
+      </div>
+    </div>
+    <div class="hero-cta reveal" style="margin-top:36px;">
+      <a href="https://lin.ee/QheIZp8" target="_blank" rel="noopener" class="btn btn-gold">公式LINEで無料カウンセリングを予約する</a>
+    </div>
+  </div>
+</section>
+
+<section id="concept">
+  <div class="wrap concept-wrap">
+    <div class="eyebrow center">CONCEPT</div>
+    <h2 class="h2 center reveal">美と健康、<br class="mobile-only">しなやかに、強く。</h2>
+    <p class="concept-quote center reveal">
+      TTGYMとしては皆様に、<br class="mobile-only">
+      <span class="gold-text">"最高に幸せを感じる身体"</span>をお届けしたい。
+    </p>
+    <p class="lead center reveal">
+      TTGYMのトレーニングを通して、しなやかで引き締まり、強く動ける身体づくりを。<br class="mobile-only">
+      鍛えることは、自分を大切にすること。あなたの「なりたい自分」に、専属トレーナーが伴走します。
+    </p>
+    <div class="hero-cta reveal" style="margin-top:8px;">
+      <a href="https://www.instagram.com/ttgym_official" target="_blank" rel="noopener" class="btn btn-outline ig-btn">
+        <span class="ig-icon" aria-hidden="true"></span> 完全個室パーソナルのInstagram
+      </a>
+      <a href="https://www.instagram.com/ttgym_kickboxing" target="_blank" rel="noopener" class="btn btn-outline ig-btn">
+        <span class="ig-icon" aria-hidden="true"></span> キックボクシングのInstagram
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="philosophy" style="background:var(--bg2);">
+  <div class="wrap">
+    <div class="eyebrow center">PHILOSOPHY</div>
+    <h2 class="h2 center reveal">企業理念</h2>
+    <p class="philosophy-lead reveal">全社員の幸福と生きがいを追求するとともに、地域社会の発展に貢献します。</p>
+    <p class="philosophy-lead reveal">全社員が自らの仕事に自信と誇りを持ち、永続的に成長できる組織を目指します。</p>
+    <p class="philosophy-lead reveal">「最善・最良・最高」のサービスを提供し、<br class="mobile-only">すべての人から「感謝」と「信頼」を頂ける企業になります。</p>
+
+    <h3 class="philosophy-sub reveal">社員十二箇条</h3>
+    <ul class="creed-list reveal">
+      <li>相手の目を見て明るく元気に挨拶をすること</li>
+      <li>整理・整頓・清潔を心掛け、会社内の備品は大切に扱うこと</li>
+      <li>計画・実行・改善を繰り返し、報告・連絡・相談を徹底すること</li>
+      <li>周りの人に敬意を表し、礼儀礼節を持って接すること</li>
+      <li>強い熱意と情熱を持って、誰にも負けない努力をすること</li>
+      <li>会社に「何をしてもらうか」ではなく、会社に「何ができるか」を考えること</li>
+      <li>仲間や家族を大切にし、人の悪口・陰口を言わないこと</li>
+      <li>自分さえよければという「私心」を捨て、協調性を持って行動すること</li>
+      <li>人の話しはしっかりと聞いて、間違った時は素直に謝ること</li>
+      <li>謙虚にして驕らず、どんな仕事にも人の助けがあることを忘れないこと</li>
+      <li>人にも自分にも素直な心を持って常に正直であること</li>
+      <li>誰に対しても感謝の気持ち・謙虚な姿勢・思いやりの心を持って接すること</li>
+    </ul>
+    <div class="concept-note center reveal" style="margin-top:32px;">GNOグループ</div>
+  </div>
+</section>
+
+<section id="signature">
+  <div class="wrap">
+    <div class="eyebrow center">SIGNATURE</div>
+    <h2 class="h2 center reveal">2つのシグネチャープログラム</h2>
+    <p class="lead center reveal">完全個室のパーソナルトレーニングと、本格キックボクシング。TTGYMは、この2軸で理想のカラダと向き合う時間をお届けします。</p>
+    <div class="signature-grid reveal">
+      <div class="signature-card">
+        <div class="signature-tag">01 / PRIVATE PERSONAL</div>
+        <h3>完全個室パーソナル</h3>
+        <p>地下フロアの落ち着いた完全個室スタジオで、専属トレーナーとマンツーマン。オーダーメイドのメニューと、トレーニング前の身体調整で、人目を気にせずあなたのペースで向き合えます。</p>
+        <a href="#courses" class="btn btn-outline">プログラムを見る</a>
+      </div>
+      <div class="signature-card">
+        <div class="signature-tag">02 / KICKBOXING</div>
+        <h3>キックボクシング</h3>
+        <p>「殴って、蹴って、美しくなる。」ONE初代世界王者をはじめ、RIZIN・DEEPで闘うプロ格闘家が指導する、広尾最高峰のキックボクシング。広い空間でのマンツーマン指導はもちろん、みんなで楽しむグループレッスンも人気です。</p>
+        <a href="#courses" class="btn btn-outline">プログラムを見る</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="concerns">
+  <div class="wrap">
+    <div class="eyebrow center">CONCERNS</div>
+    <h2 class="h2 center reveal">こんなお悩み、<br class="mobile-only">ありませんか？</h2>
+    <p class="lead center reveal">一人でのダイエットやトレーニングが続かないのは、意志が弱いからではありません。正しい方法とサポートが足りていないだけです。</p>
+    <div class="concerns-grid stagger">
+      <div class="concern-card reveal" style="--i:0"><div class="q">Q1</div><p>自己流のダイエットを繰り返してはリバウンド…を何度も経験している</p></div>
+      <div class="concern-card reveal" style="--i:1"><div class="q">Q2</div><p>ジムに通っても何をすればいいか分からず、結局続かなかった</p></div>
+      <div class="concern-card reveal" style="--i:2"><div class="q">Q3</div><p>人前でのトレーニングが恥ずかしくて一歩を踏み出せない</p></div>
+      <div class="concern-card reveal" style="--i:3"><div class="q">Q4</div><p>食事管理まで細かく相談できるトレーナーが見つからない</p></div>
+      <div class="concern-card reveal" style="--i:4"><div class="q">Q5</div><p>子連れ・犬連れでも通えるジムがなかなか見つからない</p></div>
+      <div class="concern-card reveal" style="--i:5"><div class="q">Q6</div><p>体験は良かったジムでも、料金が高くて継続できるか不安</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="stats reveal">
+      <div class="stat"><div class="num gold-text"><span class="counter" data-to="41">0</span>.7%</div><div class="label">3年以上継続中</div></div>
+      <div class="stat"><div class="num gold-text"><span class="counter" data-to="70">0</span>%</div><div class="label">女性比率(男女比3:7)</div></div>
+      <div class="stat"><div class="num gold-text"><span class="counter" data-to="86">0</span>%</div><div class="label">リピート率</div></div>
+    </div>
+    <div class="stats-note">DATA · 2026年7月時点のTTGYM実績</div>
+  </div>
+</section>
+
+<section id="features">
+  <div class="wrap">
+    <div class="eyebrow center">WHY TTGYM</div>
+    <h2 class="h2 center reveal">TTGYMが選ばれる<br class="mobile-only">5つの理由</h2>
+    <p class="lead center reveal">エリア初のケア体制と、通いやすさへのこだわり。数字にもこだわりながら、結果にコミットします。</p>
+    <div class="feat-grid stagger">
+      <div class="feat-card reveal" style="--i:0"><div class="feat-num">01 / エリア初</div><h3>トレーニング×ケアサポート</h3><p>お客様に応じたオーダーメイドメニュー。トレーニング前は必ず身体を調整してから開始し、さらに3ヶ月に1回50分間のボディケア(腸もみ・モビリティトレーニング等)も。</p></div>
+      <div class="feat-card reveal" style="--i:1"><div class="feat-num">02 / エリア初</div><h3>充実したオンラインサポート</h3><p>栄養バランスやお客様の身体に応じて、プロが公式LINEで食事サポート。さらにTTGYMオリジナルアプリで食事・トレーニング・体調などのメニューを分かりやすく可視化。自宅トレーニングメニューの作成や、パーソナルジム初の1on1オンラインパーソナルにも対応可能です。完全密着型のライフスタイル改革で、効率よく成果を出していきます。</p></div>
+      <div class="feat-card reveal" style="--i:2"><div class="feat-num">03</div><h3>通いやすさ</h3><p>好立地・無料駐車場あり。エリアNo.1クラスの値段のプランや満足度100%を目指すプランをご用意し、出張サービスにも対応。会員数を制限しているのでご予約も取りやすいです。</p></div>
+      <div class="feat-card reveal" style="--i:3"><div class="feat-num">04</div><h3>結果にコミット</h3><p>独自メソッドを元に最短でコミット。人間本来の目的である「健康かつ美しく」あるためにベストのサポートを提供し、リピート率86%という数字にもこだわっています。</p></div>
+      <div class="feat-card reveal" style="--i:4"><div class="feat-num">05</div><h3>広い完全個室・子連れ/犬連れOK</h3><p>地下フロアの広い完全個室スタジオは撮影もOK。子連れ・犬連れでも通えるお客様に尽くしたサポートで、経営者の方や主婦の方、芸能関係の方々にも喜んでいただいています。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="courses" style="background:var(--bg2);">
+  <div class="wrap">
+    <div class="eyebrow center">PROGRAM</div>
+    <h2 class="h2 center reveal">5つのプログラム</h2>
+    <p class="lead center reveal">カウンセリングで目標と体の状態をヒアリングし、キックボクシング+パーソナル4コースから最適なプログラムをご提案します。</p>
+    <div class="course-grid stagger">
+      <div class="course-card signature reveal" style="--i:0">
+        <div class="course-top"><div class="tag">SIGNATURE</div><h3>キックボクシングコース</h3><p>殴って、蹴って、美しくなる。</p></div>
+        <div class="course-body">
+          <li>ONE初代世界王者をはじめ、RIZIN・DEEPで闘うプロ格闘家が指導</li>
+          <li>広い空間でのマンツーマン指導</li>
+          <li>みんなで楽しくグループレッスンも</li>
+          <li>格闘技系フィットネスで全身運動&ストレス発散</li>
+          <li>未経験・女性も安心の基礎から丁寧に指導</li>
+        </div>
+      </div>
+      <div class="course-card reveal" style="--i:1">
+        <div class="course-top"><div class="tag">COURSE 01</div><h3>選手育成コース</h3><p>大会・競技出場を目指す、本格フィジカル強化</p></div>
+        <div class="course-body">
+          <li>部活動・大会出場を目指す方向けの競技特化プログラム</li>
+          <li>スピード・瞬発力・体幹を鍛えるフィジカルトレーニング</li>
+          <li>プロ格闘家トレーナーによる実践的な指導</li>
+          <li>目安期間:12週間〜</li>
+        </div>
+      </div>
+      <div class="course-card reveal" style="--i:2">
+        <div class="course-top"><div class="tag">COURSE 02</div><h3>TTGYMフルオーダーコース</h3><p>あなただけのオーダーメイドプログラム</p></div>
+        <div class="course-body">
+          <li>カウンセリングをもとに毎回トレーニング内容をフルオーダーメイド</li>
+          <li>パーソナル・キックボクシングの要素を自由に組み合わせ可能</li>
+          <li>公式LINE&TTGYMオリジナルアプリで完全サポート</li>
+          <li>目安期間:ご要望に応じて設計</li>
+        </div>
+      </div>
+      <div class="course-card reveal" style="--i:3">
+        <div class="course-top"><div class="tag">COURSE 03</div><h3>姿勢・機能改善コース</h3><p>痛みや不調のない、動けるカラダへ</p></div>
+        <div class="course-body">
+          <li>姿勢分析とトレーニング前の身体調整</li>
+          <li>3ヶ月に1回50分間のボディケア(腸もみ・モビリティ)</li>
+          <li>日常動作を意識したプログラム</li>
+          <li>目安期間:8〜12週間</li>
+        </div>
+      </div>
+      <div class="course-card reveal" style="--i:4">
+        <div class="course-top"><div class="tag">COURSE 04</div><h3>くびれ・美尻強化コース</h3><p>メリハリのある、魅せるカラダづくり</p></div>
+        <div class="course-body">
+          <li>くびれ・ヒップアップに特化した部位別トレーニング</li>
+          <li>姿勢改善と骨盤まわりの調整で美しいシルエットへ</li>
+          <li>写真記録によるビフォーアフター管理</li>
+          <li>目安期間:12〜16週間</li>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="price">
+  <div class="wrap">
+    <div class="eyebrow center">PRICE</div>
+    <h2 class="h2 center reveal">料金プラン</h2>
+    <p class="lead center reveal">回数券・通い放題をご用意しています。表示は税込です。</p>
+    <p class="price-note-top reveal">入会金 <b>70,000円</b></p>
+    <div class="kb-trial-row reveal solo">
+      <div class="kb-trial"><span>個室パーソナル体験(50分)</span><b>7,000円</b></div>
+    </div>
+    <div style="text-align:center; margin-top:18px;" class="reveal">
+      <a href="https://lin.ee/QheIZp8" target="_blank" rel="noopener" class="btn btn-outline">体験を予約する</a>
+    </div>
+    <div class="price-grid two stagger">
+      <div class="price-card highlight reveal" style="--i:0">
+        <div class="badge">人気No.1</div>
+        <h3>60分回数券(フルケアサポート)</h3>
+        <div class="price">¥7,000<small>〜/回</small></div>
+        <p class="note">回数が増えるほどお得に</p>
+        <ul class="tiers">
+          <li>8回<span class="tier-price"><b>80,000円</b><small>(10,000円/回)</small></span></li>
+          <li>16回<span class="tier-price"><b>144,000円</b><small>(9,000円/回)</small></span></li>
+          <li>24回<span class="tier-price"><b>192,000円</b><small>(8,000円/回)</small></span></li>
+          <li>32回<span class="tier-price"><b>224,000円</b><small>(7,000円/回)</small></span></li>
+        </ul>
+        <a href="https://lin.ee/QheIZp8" target="_blank" rel="noopener" class="btn btn-gold" style="width:100%;">このプランで相談する</a>
+      </div>
+      <div class="price-card reveal" style="--i:1">
+        <h3>30分通い放題</h3>
+        <div class="price">¥27,800<small>/月</small></div>
+        <p class="note">スキマ時間にサクッと通いたい方へ</p>
+        <ul>
+          <li>月内は回数を気にせず通える</li>
+          <li>30分の集中セッション</li>
+          <li>忙しい方・習慣化したい方に人気</li>
+        </ul>
+        <a href="https://lin.ee/QheIZp8" target="_blank" rel="noopener" class="btn btn-outline" style="width:100%;">詳しく見る</a>
+      </div>
+    </div>
+
+    <div class="kb-price">
+      <h3 class="kb-price-title reveal">キックボクシング料金</h3>
+      <p class="lead center reveal">入会金 22,000円(税込)。セミパーソナル・マンツーマンパーソナルからお選びいただけます。</p>
+      <div class="kb-trial-row reveal">
+        <div class="kb-trial"><span>セミパーソナル体験</span><b>3,300円</b></div>
+        <div class="kb-trial"><span>パーソナル体験</span><b>5,500円</b></div>
+        <div class="kb-trial"><span>ノブタツ セミパーソナル体験</span><b>8,800円</b></div>
+        <div class="kb-trial"><span>ノブタツ パーソナル体験</span><b>11,000円</b></div>
+      </div>
+      <div class="kb-grid stagger">
+        <div class="price-card reveal" style="--i:0">
+          <h3>セミパーソナル(50分)</h3>
+          <p class="note">通常価格</p>
+          <ul class="tiers">
+            <li>4回<span class="tier-price"><b>24,000円</b><small>(6,000円/回)</small></span></li>
+            <li>8回<span class="tier-price"><b>45,600円</b><small>(5,700円/回)</small></span></li>
+            <li>12回<span class="tier-price"><b>64,800円</b><small>(5,400円/回)</small></span></li>
+          </ul>
+        </div>
+        <div class="price-card reveal" style="--i:1">
+          <h3>パーソナル(50分)</h3>
+          <p class="note">通常価格</p>
+          <ul class="tiers">
+            <li>4回<span class="tier-price"><b>44,000円</b><small>(11,000円/回)</small></span></li>
+            <li>8回<span class="tier-price"><b>84,000円</b><small>(10,500円/回)</small></span></li>
+            <li>12回<span class="tier-price"><b>120,000円</b><small>(10,000円/回)</small></span></li>
+          </ul>
+        </div>
+        <div class="price-card highlight reveal" style="--i:2">
+          <div class="badge">ONE初代王者</div>
+          <h3>ノブタツ セミパーソナル(50分)</h3>
+          <p class="note">鈴木信辰指名</p>
+          <ul class="tiers">
+            <li>4回<span class="tier-price"><b>40,000円</b><small>(10,000円/回)</small></span></li>
+            <li>8回<span class="tier-price"><b>76,000円</b><small>(9,500円/回)</small></span></li>
+            <li>12回<span class="tier-price"><b>108,000円</b><small>(9,000円/回)</small></span></li>
+          </ul>
+        </div>
+        <div class="price-card highlight reveal" style="--i:3">
+          <div class="badge">ONE初代王者</div>
+          <h3>ノブタツ パーソナル(50分)</h3>
+          <p class="note">鈴木信辰指名</p>
+          <ul class="tiers">
+            <li>4回<span class="tier-price"><b>66,000円</b><small>(16,500円/回)</small></span></li>
+            <li>8回<span class="tier-price"><b>124,000円</b><small>(15,500円/回)</small></span></li>
+            <li>12回<span class="tier-price"><b>180,000円</b><small>(15,000円/回)</small></span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <p class="price-foot reveal">※ 料金・プランは店舗・時期により変動する場合があります。正式な金額は無料カウンセリングにてご案内します。</p>
+  </div>
+</section>
+
+<section id="flow" style="background:var(--bg2);">
+  <div class="wrap">
+    <div class="eyebrow center">FLOW</div>
+    <h2 class="h2 center reveal">ご入会までの4ステップ</h2>
+    <p class="lead center reveal">無料カウンセリングから体験まで、最短即日でスタートできます。</p>
+    <div class="flow" id="flowTrack">
+      <div class="flow-line"><div class="flow-line-fill" id="flowFill"></div></div>
+      <div class="flow-step" data-step><div class="flow-num">01</div><div class="flow-text"><h3>WEBから無料カウンセリング予約</h3><p>公式サイト・LINEから、ご希望の日時を選ぶだけ。しつこい勧誘は一切ありません。</p></div></div>
+      <div class="flow-step" data-step><div class="flow-num">02</div><div class="flow-text"><h3>カウンセリング&体組成測定</h3><p>目標・生活習慣・体の状態をヒアリングし、体組成計で現在地を可視化します。</p></div></div>
+      <div class="flow-step" data-step><div class="flow-num">03</div><div class="flow-text"><h3>体験トレーニング(50分)</h3><p>パーソナル・キックボクシングどちらも体験可能。強度はお好みに合わせて調整します。</p></div></div>
+      <div class="flow-step" data-step><div class="flow-num">04</div><div class="flow-text"><h3>プランのご提案・ご入会</h3><p>体験後のフィードバックをもとに最適なプログラムをご提案。ご納得いただけたらご入会です。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="reserve">
+  <div class="wrap">
+    <div class="eyebrow center">RESERVE</div>
+    <h2 class="h2 center reveal">WEBから予約・お問い合わせ</h2>
+    <p class="lead center reveal">下記フォームからも直接ご予約・お問い合わせいただけます。お急ぎの場合はLINE・お電話もご利用ください。</p>
+    <form class="reserve-form reveal" id="reserveForm">
+      <div class="form-row">
+        <label>お名前<span class="req">必須</span>
+          <input type="text" name="name" autocomplete="name" required>
+        </label>
+        <label>電話番号<span class="req">必須</span>
+          <input type="tel" name="phone" autocomplete="tel" required>
+        </label>
+      </div>
+      <div class="form-row">
+        <label>メールアドレス(任意)
+          <input type="email" name="email" autocomplete="email">
+        </label>
+        <label>ご希望プログラム
+          <select name="program">
+            <option value="">選択してください</option>
+            <option>完全個室パーソナル体験</option>
+            <option>キックボクシング体験</option>
+            <option>フルオーダーコース相談</option>
+            <option>まだ決めていない・相談したい</option>
+          </select>
+        </label>
+      </div>
+      <label>ご希望の日時(第一希望・第二希望など)
+        <input type="text" name="preferred_date" placeholder="例:9/20(土)14:00〜、または平日夜">
+      </label>
+      <label>ご質問・ご要望(任意)
+        <textarea name="message" rows="4"></textarea>
+      </label>
+      <button type="submit" class="btn btn-gold" id="reserveSubmit">この内容で送信する</button>
+      <p class="form-note" id="reserveStatus" role="status" aria-live="polite"></p>
+    </form>
+    <div class="reserve-alt reveal">
+      <a href="https://lin.ee/QheIZp8" target="_blank" rel="noopener" class="btn btn-outline">LINEで予約する</a>
+      <a href="tel:0364509321" class="btn btn-outline">電話で予約する</a>
+    </div>
+  </div>
+</section>
+
+<section id="voice">
+  <div class="wrap" style="max-width:100%; padding:0 0 0 max(20px,calc(50% - 560px));">
+    <div style="max-width:1120px; margin:0 auto; padding:0 20px;">
+      <div class="eyebrow center">VOICE</div>
+      <h2 class="h2 center reveal">お客様の声</h2>
+      <p class="lead center reveal">Instagramに寄せられた会員様からのコメント・フィードバックの一部をご紹介します。</p>
+    </div>
+    <div class="voice-track">
+      <div class="voice-card"><div class="stars">★★★★★</div><p class="quote">「広くて綺麗な空間で、トレーナーさんもとても親身にトレーニングサポートや食事アドバイスをしてくれて、とてもよかったです!」</p><div class="voice-meta"><span class="name">運動不足解消・ダイエット目的</span></div></div>
+      <div class="voice-card"><div class="stars">★★★★★</div><p class="quote">「地下にあるプライベート感のある空間で、かっこいいトレーニングルーム。腸もみやモビリティトレーニングなど幅広く対応してもらえて、長く健康的になりたい人に特におすすめです。」</p><div class="voice-meta"><span class="name">コンディショニング目的</span></div></div>
+      <div class="voice-card"><div class="stars">★★★★★</div><p class="quote">「まずは体の状態をチェックし、数分のストレッチやメンテナンスでだいぶ姿勢が変わりました。初心者でもわかりやすく、時には厳しく導いてくれます。」</p><div class="voice-meta"><span class="name">姿勢改善目的</span></div></div>
+      <div class="voice-card"><div class="stars">★★★★★</div><p class="quote">「自分の体の悪いところを細かく丁寧に教えてくれるので、改善すべき部分が明確になりモチベーションが上がりました!」</p><div class="voice-meta"><span class="name">初めてのパーソナルトレーニング</span></div></div>
+      <div class="voice-card"><div class="stars">★★★★★</div><p class="quote">「TTGYMのおかげでここまで来れました。何から何までサポートしていただいて感謝です。目標を達成しましたが、引き続き通いたいです!」</p><div class="voice-meta"><span class="name">目標達成・継続中</span></div></div>
+      <div class="voice-card"><div class="stars">★★★★★</div><p class="quote">「知識量がバケモノです。人生の先生だと思ってしまいました。今までのトレーナーさんに下心を出されたこともありましたが、TTGYMは一切なくサポートしてくださって本当に感謝しかないです。」</p><div class="voice-meta"><span class="name">安心して通える指導</span></div></div>
+    </div>
+    <p class="voice-note">※ Instagram(@ttgym_official)へのコメント・投稿を一部要約してご紹介しています</p>
+  </div>
+</section>
+
+<section id="access">
+  <div class="wrap">
+    <div class="eyebrow center">ACCESS</div>
+    <h2 class="h2 center reveal">店舗情報</h2>
+    <div class="access-box reveal">
+      <div class="access-info">
+        <dl>
+          <dt>STUDIO</dt><dd>TTGYM 広尾</dd>
+          <dt>ADDRESS</dt><dd>〒150-0012<br>東京都渋谷区広尾1丁目7-7</dd>
+          <dt>ACCESS</dt><dd>広尾駅エリア / 無料駐車場あり / 地下フロアの完全個室スタジオ</dd>
+          <dt>HOURS</dt><dd>10:00 - 22:00(最終受付 21:00) / 不定休</dd>
+          <dt>NOTE</dt><dd>子連れ・犬連れOK / 出張サービスにも対応可能</dd>
+          <dt>TEL</dt><dd><a href="tel:0364509321">03-6450-9321</a></dd>
+        </dl>
+      </div>
+      <div class="map-card">
+        <svg viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="var(--gold)" stroke-width="1.1" aria-hidden="true">
+          <path d="M12 21s7-7.02 7-12A7 7 0 1 0 5 9c0 4.98 7 12 7 12Z"/>
+          <circle cx="12" cy="9" r="2.4" fill="var(--gold)" stroke="none"/>
+        </svg>
+        <div class="map-addr">〒150-0012<br>東京都渋谷区広尾1丁目7-7<br>TTGYM 広尾(地下フロア)</div>
+        <a href="https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B8%8B%E8%B0%B7%E5%8C%BA%E5%BA%83%E5%B0%BE1%E4%B8%81%E7%9B%AE7-7%20TTGYM" target="_blank" rel="noopener" class="btn btn-outline">Google Mapで経路を見る</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" style="background:var(--bg2);">
+  <div class="wrap">
+    <div class="eyebrow center">FAQ</div>
+    <h2 class="h2 center reveal">よくあるご質問</h2>
+    <div class="faq">
+      <div class="faq-item"><button class="faq-q">運動未経験でも大丈夫ですか?<span class="plus">+</span></button><div class="faq-a"><p>はい、大丈夫です。会員様の多くが未経験からのスタートです。体力や経験に合わせてトレーナーがメニューを調整しますのでご安心ください。</p></div></div>
+      <div class="faq-item"><button class="faq-q">キックボクシング未経験でも参加できますか?<span class="plus">+</span></button><div class="faq-a"><p>はい、経験がない方も安心してご参加いただけます。トレーナーが基礎から丁寧にお教えします。マンツーマンのセミパーソナル・パーソナルのほか、グループレッスンもございます。</p></div></div>
+      <div class="faq-item"><button class="faq-q">子供やペットを連れて行っても大丈夫ですか?<span class="plus">+</span></button><div class="faq-a"><p>はい、TTGYMは子連れ・犬連れも歓迎しております。完全個室なので周りを気にせずお越しいただけます。</p></div></div>
+      <div class="faq-item"><button class="faq-q">無理な勧誘はありませんか?<span class="plus">+</span></button><div class="faq-a"><p>強引な勧誘は一切行っておりません。体験後、ご納得いただいた場合のみご入会いただく形です。</p></div></div>
+      <div class="faq-item"><button class="faq-q">予約のキャンセルや振替はできますか?<span class="plus">+</span></button><div class="faq-a"><p>マイページ・LINEから事前にご連絡いただければ、柔軟に振替対応いたします(規定回数・期限あり)。</p></div></div>
+      <div class="faq-item"><button class="faq-q">支払い方法を教えてください<span class="plus">+</span></button><div class="faq-a"><p>クレジットカード、口座振替、各種QR決済に対応しております。詳細はカウンセリング時にご案内します。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="eyebrow center">GET STARTED</div>
+  <h2>まずは無料カウンセリングから</h2>
+  <p class="lead center">しつこい勧誘は一切ありません。あなたの目標と今のカラダの状態を、まずは無料でお聞かせください。</p>
+  <div class="final-cta-actions">
+    <a href="https://lin.ee/QheIZp8" target="_blank" rel="noopener" class="btn btn-gold">LINEで無料カウンセリングを予約する</a>
+    <a href="tel:0364509321" class="btn btn-outline">電話で予約する(03-6450-9321)</a>
+  </div>
+  <div class="final-cta-sub reveal">
+    <a href="https://t-tgym-app.vercel.app" target="_blank" rel="noopener" class="app-link">会員の方はこちら(公式アプリ) →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <div class="name gold-text">TTGYM</div>
+      <p>「美と健康」をテーマに、完全個室のパーソナルトレーニングと本格キックボクシングを提供する、広尾のプライベートジムです。</p>
+      <div class="foot-sns">
+        <a href="https://www.instagram.com/ttgym_official" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+        <a href="https://www.instagram.com/ttgym_kickboxing" target="_blank" rel="noopener" aria-label="Instagram Kickboxing">KB</a>
+        <a href="https://lin.ee/QheIZp8" target="_blank" rel="noopener" aria-label="LINE">LN</a>
+      </div>
+      <div class="group">GNOグループ</div>
+    </div>
+    <div class="foot-col"><h4>MENU</h4><ul>
+      <li><a href="#philosophy">企業理念</a></li><li><a href="#features">特徴</a></li><li><a href="#courses">プログラム</a></li><li><a href="#price">料金</a></li><li><a href="#flow">ご入会の流れ</a></li><li><a href="#reserve">予約フォーム</a></li>
+    </ul></div>
+    <div class="foot-col"><h4>SUPPORT</h4><ul>
+      <li><a href="#voice">お客様の声</a></li><li><a href="#access">アクセス</a></li><li><a href="#faq">よくある質問</a></li><li><a href="https://t-tgym-app.vercel.app" target="_blank" rel="noopener" class="app-link">会員アプリ</a></li>
+    </ul></div>
+    <div class="foot-col"><h4>CONTACT</h4><ul>
+      <li><a href="tel:0364509321">TEL: 03-6450-9321</a></li><li>渋谷区広尾1-7-7</li><li>10:00-22:00 / 不定休</li>
+    </ul></div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 TTGYM. All rights reserved.</span>
+    <span>掲載の料金・情報の一部はイメージです。正式な内容はカウンセリングにてご確認ください。</span>
+  </div>
+</footer>
+
+<div class="sticky-cta"><a href="https://lin.ee/QheIZp8" target="_blank" rel="noopener" class="btn btn-gold">無料カウンセリングを予約する</a></div>
+
+<script>
+(function(){
+  // header shrink on scroll
+  var header = document.getElementById('siteHeader');
+  var onScroll = function(){
+    if(window.scrollY > 40) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+  };
+  document.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  // mobile nav
+  var hamburger = document.getElementById('hamburger');
+  var mobileNav = document.getElementById('mobileNav');
+  hamburger.addEventListener('click', function(){
+    mobileNav.classList.toggle('open');
+  });
+  mobileNav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ mobileNav.classList.remove('open'); });
+  });
+
+  // hero cursor glow (Nahato-style subtle interactive glow)
+  var glow = document.getElementById('heroGlow');
+  var hero = document.querySelector('.hero');
+  hero.addEventListener('pointermove', function(e){
+    var r = hero.getBoundingClientRect();
+    var x = ((e.clientX - r.left) / r.width) * 100;
+    var y = ((e.clientY - r.top) / r.height) * 100;
+    hero.style.setProperty('--mx', x + '%');
+    hero.style.setProperty('--my', y + '%');
+  });
+
+  // scroll reveal
+  var revealEls = document.querySelectorAll('.reveal');
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.15});
+  revealEls.forEach(function(el){ io.observe(el); });
+
+  // count-up numbers
+  var counters = document.querySelectorAll('.counter');
+  var countIo = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(!entry.isIntersecting) return;
+      var el = entry.target;
+      var to = parseInt(el.getAttribute('data-to'), 10);
+      var start = null;
+      var dur = 1400;
+      function step(ts){
+        if(!start) start = ts;
+        var p = Math.min(1, (ts - start) / dur);
+        var eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(eased * to);
+        if(p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+      countIo.unobserve(el);
+    });
+  }, {threshold:0.6});
+  counters.forEach(function(el){ countIo.observe(el); });
+
+  // flow line fill + step highlight
+  var flowSteps = document.querySelectorAll('.flow-step');
+  var flowFill = document.getElementById('flowFill');
+  var flowTrack = document.getElementById('flowTrack');
+  function updateFlow(){
+    var r = flowTrack.getBoundingClientRect();
+    var vh = window.innerHeight;
+    var progress = (vh * 0.75 - r.top) / r.height;
+    progress = Math.max(0, Math.min(1, progress));
+    flowFill.style.height = (progress * 100) + '%';
+    flowSteps.forEach(function(step, i){
+      var stepProgress = (i + 1) / flowSteps.length;
+      if(progress >= stepProgress - 0.08) step.classList.add('in');
+    });
+  }
+  document.addEventListener('scroll', updateFlow, {passive:true});
+  window.addEventListener('resize', updateFlow);
+  updateFlow();
+
+  // faq accordion
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    var btn = item.querySelector('.faq-q');
+    var ans = item.querySelector('.faq-a');
+    btn.addEventListener('click', function(){
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(other){
+        other.classList.remove('open');
+        other.querySelector('.faq-a').style.maxHeight = null;
+      });
+      if(!isOpen){
+        item.classList.add('open');
+        ans.style.maxHeight = ans.scrollHeight + 'px';
+      }
+    });
+  });
+})();
+</script>
+
+<!--
+  予約フォームの送信先(Supabase)設定。
+  下の2つをSupabaseプロジェクトの実際の値に置き換えてください。
+  Project Settings → API にある "Project URL" と "anon public" キーです。
+-->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script>
+(function(){
+  var SUPABASE_URL = "YOUR_SUPABASE_URL";       // 例: https://xxxxxxxxxxxx.supabase.co
+  var SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_KEY";
+
+  var configured = SUPABASE_URL.indexOf("YOUR_") !== 0 && SUPABASE_ANON_KEY.indexOf("YOUR_") !== 0;
+  var supabaseClient = configured ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY) : null;
+
+  var form = document.getElementById('reserveForm');
+  var status = document.getElementById('reserveStatus');
+  var submitBtn = document.getElementById('reserveSubmit');
+  if(!form) return;
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    if(!supabaseClient){
+      status.textContent = 'フォームの設定が完了していません。お手数ですがLINEまたはお電話でご連絡ください。';
+      status.className = 'form-note err';
+      return;
+    }
+
+    var fd = new FormData(form);
+    var payload = {
+      name: fd.get('name'),
+      phone: fd.get('phone'),
+      email: fd.get('email') || null,
+      program: fd.get('program') || null,
+      preferred_date: fd.get('preferred_date') || null,
+      message: fd.get('message') || null
+    };
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = '送信中...';
+    status.textContent = '';
+    status.className = 'form-note';
+
+    supabaseClient.from('inquiries').insert(payload).then(function(res){
+      if(res.error) throw res.error;
+      form.reset();
+      status.textContent = '送信しました。担当より折り返しご連絡いたします。';
+      status.className = 'form-note ok';
+    }).catch(function(){
+      status.textContent = '送信に失敗しました。お手数ですがLINEまたはお電話でご連絡ください。';
+      status.className = 'form-note err';
+    }).finally(function(){
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'この内容で送信する';
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
