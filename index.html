@@ -1522,18 +1522,14 @@
 </script>
 
 <!--
-  予約フォームの送信先(Supabase)設定。
-  下の2つをSupabaseプロジェクトの実際の値に置き換えてください。
-  Project Settings → API にある "Project URL" と "anon public" キーです。
+  予約フォームの送信先(Googleスプレッドシート)設定。
+  下のURLを、Google Apps Scriptで発行した「ウェブアプリのURL」(.../exec)に置き換えてください。
 -->
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
 <script>
 (function(){
-  var SUPABASE_URL = "YOUR_SUPABASE_URL";       // 例: https://xxxxxxxxxxxx.supabase.co
-  var SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_KEY";
+  var GAS_URL = "https://script.google.com/macros/s/AKfycbzsx2osk7fd6FA8i2MFmNxNZbwMn1E80njfj5rVuzoveY9pcLG4hqxLYoaJNR8VBKIS/exec";
 
-  var configured = SUPABASE_URL.indexOf("YOUR_") !== 0 && SUPABASE_ANON_KEY.indexOf("YOUR_") !== 0;
-  var supabaseClient = configured ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY) : null;
+  var configured = GAS_URL.indexOf("YOUR_") !== 0;
 
   var form = document.getElementById('reserveForm');
   var status = document.getElementById('reserveStatus');
@@ -1543,29 +1539,31 @@
   form.addEventListener('submit', function(e){
     e.preventDefault();
 
-    if(!supabaseClient){
+    if(!configured){
       status.textContent = 'フォームの設定が完了していません。お手数ですがLINEまたはお電話でご連絡ください。';
       status.className = 'form-note err';
       return;
     }
 
     var fd = new FormData(form);
-    var payload = {
-      name: fd.get('name'),
-      phone: fd.get('phone'),
-      email: fd.get('email') || null,
-      program: fd.get('program') || null,
-      preferred_date: fd.get('preferred_date') || null,
-      message: fd.get('message') || null
-    };
+    var params = new URLSearchParams();
+    params.append('name', fd.get('name') || '');
+    params.append('phone', fd.get('phone') || '');
+    params.append('email', fd.get('email') || '');
+    params.append('program', fd.get('program') || '');
+    params.append('preferred_date', fd.get('preferred_date') || '');
+    params.append('message', fd.get('message') || '');
 
     submitBtn.disabled = true;
     submitBtn.textContent = '送信中...';
     status.textContent = '';
     status.className = 'form-note';
 
-    supabaseClient.from('inquiries').insert(payload).then(function(res){
-      if(res.error) throw res.error;
+    fetch(GAS_URL, {
+      method: 'POST',
+      body: params
+    }).then(function(res){
+      if(!res.ok) throw new Error('send failed');
       form.reset();
       status.textContent = '送信しました。担当より折り返しご連絡いたします。';
       status.className = 'form-note ok';
